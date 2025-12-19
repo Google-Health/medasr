@@ -1,0 +1,3 @@
+torch~=2.9.1
+# TODO(b/468062329): Replace with regular pip version when released.
+https://github.com/huggingface/transformers/archive/65dc261512cbdb1ee72b88ae5b222f2605aad8e5.tar.gz#egg=transformers

@@ -1,0 +1,124 @@
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+title: MedASRResponse
+type: object
+description: >
+  The schema for a single Speech-to-Text transcription response. Parameters are aligned
+  with the core functionality of the OpenAI Transcription API:
+  https://platform.openai.com/docs/api-reference/audio/json-object
+additionalProperties: false
+required:
+  - text
+properties:
+  text:
+    type: string
+    description: The transcribed text.
+  logprobs:
+    type: array
+    description: The log probabilities of the tokens in the transcription.
+    items:
+      $ref: "#/components/schemas/LogprobDetail"
+  usage:
+    description: Token usage statistics for the request.
+    anyOf:
+      - $ref: "#/components/schemas/TokenUsage"
+      - $ref: "#/components/schemas/DurationUsage"
+
+components:
+  schemas:
+    LogprobDetail:
+      title: LogprobDetail
+      type: object
+      description: A single log probability object for a token.
+      additionalProperties: false
+      required:
+        - bytes
+        - logprob
+        - token
+      properties:
+        bytes:
+          type: array
+          description: The bytes of the token (represented as an array of integers).
+          items:
+            type: integer
+        logprob:
+          type: number
+          description: The log probability of the token.
+        token:
+          type: string
+          description: The token in the transcription.
+
+    TokenUsage:
+      title: TokenUsage
+      type: object
+      description: Token usage statistics.
+      additionalProperties: false
+      required:
+        - input_tokens
+        - output_tokens
+        - total_tokens
+        - type
+        - input_token_details
+      properties:
+        input_tokens:
+          type: integer
+          description: Number of input tokens for this request.
+        output_tokens:
+          type: integer
+          description: Number of output tokens generated.
+        total_tokens:
+          type: integer
+          description: Total number of tokens used (input + output).
+        type:
+          type: string
+          description: The type of the usage object. Always 'tokens' for this variant.
+          enum:
+            - tokens
+        input_token_details:
+          $ref: "#/components/schemas/InputTokenDetails"
+
+    DurationUsage:
+      title: DurationUsage
+      type: object
+      description: Audio input duration usage statistics.
+      additionalProperties: false
+      required:
+        - seconds
+        - type
+      properties:
+        seconds:
+          type: number
+          description: Duration of the input audio in seconds.
+        type:
+          type: string
+          description: The type of the usage object. Always 'duration' for this variant.
+          enum:
+            - duration
+
+    InputTokenDetails:
+      title: InputTokenDetails
+      type: object
+      description: Details about the input tokens billed for this request.
+      additionalProperties: false
+      required:
+        - audio_tokens
+        - text_tokens
+      properties:
+        audio_tokens:
+          type: integer
+          description: Number of audio tokens billed for this request.
+        text_tokens:
+          type: integer
+          description: Number of text tokens billed for this request.
