@@ -154,9 +154,9 @@ click==8.3.1 \
     # via
     #   flask
     #   typer-slim
-filelock==3.20.0 \
-    --hash=sha256:339b4732ffda5cd79b13f4e2711a31b0365ce445d95d243bb996273d072546a2 \
-    --hash=sha256:711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4
+filelock==3.20.1 \
+    --hash=sha256:15d9e9a67306188a44baa72f569d2bfd803076269365fdea0934385da4dc361a \
+    --hash=sha256:b8360948b351b80f420878d8516519a2204b07aefcdcfd24912a5d33127f188c
     # via
     #   huggingface-hub
     #   torch
@@ -200,16 +200,16 @@ google-cloud-core==2.4.3 \
     --hash=sha256:1fab62d7102844b278fe6dead3af32408b1df3eb06f5c7e8634cbd40edc4da53 \
     --hash=sha256:5130f9f4c14b4fafdff75c79448f9495cfade0d8775facf1b09c3bf67e027f6e
     # via
-    #   -r medasr_requirements.in
+    #   -r requirements.in
     #   google-cloud-logging
 google-cloud-logging==3.12.1 \
     --hash=sha256:36efc823985055b203904e83e1c8f9f999b3c64270bcda39d57386ca4effd678 \
     --hash=sha256:6817878af76ec4e7568976772839ab2c43ddfd18fbbf2ce32b13ef549cd5a862
-    # via -r medasr_requirements.in
+    # via -r requirements.in
 google-cloud-secret-manager==2.20.2 \
     --hash=sha256:99b342ff722feef78aa5bad1c05c6be204f8fee01373a2eb6f05dba710b32879 \
     --hash=sha256:bbe24825e334f9e679e825e70d932118a7ff536e67c1ceb048da44111c87a45c
-    # via -r medasr_requirements.in
+    # via -r requirements.in
 googleapis-common-protos[grpc]==1.72.0 \
     --hash=sha256:4299c5a82d5ae1a9702ada957347726b167f9f8d1fc352477702a1e851ff4038 \
     --hash=sha256:e55a601c1b32b52d7a3e65f43563e2aa61bcd737998ee672ac9b951cd49319f5
@@ -653,7 +653,7 @@ psutil==7.1.3 \
     --hash=sha256:c525ffa774fe4496282fb0b1187725793de3e7c6b29e41562733cae9ada151ee \
     --hash=sha256:f39c2c19fe824b47484b96f9692932248a54c43799a84282cfe58d05a6449efd \
     --hash=sha256:fac9cd332c67f4422504297889da5ab7e05fd11e3c4392140f7370f4208ded1f
-    # via -r medasr_requirements.in
+    # via -r requirements.in
 pyasn1==0.6.1 \
     --hash=sha256:0d632f46f2ba09143da3a8afe9e33fb6f92fa2320ab7e886e2d0f7672af84629 \
     --hash=sha256:6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034
@@ -1159,7 +1159,7 @@ scipy==1.16.3 \
     --hash=sha256:f667a4542cc8917af1db06366d3f78a5c8e83badd56409f94d1eac8d8d9133fa \
     --hash=sha256:fb4b29f4cf8cc5a8d628bc8d8e26d12d7278cd1f219f22698a378c3d67db5e4b \
     --hash=sha256:ffa6eea95283b2b8079b821dc11f50a17d0571c92b43e2b5b12764dc5f9b285d
-    # via -r medasr_requirements.in
+    # via -r requirements.in
 shellingham==1.5.4 \
     --hash=sha256:7ecfff8f2fd72616f7481040475a65b2bf8af90a56c89140852d1120324e8686 \
     --hash=sha256:8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de
@@ -1218,7 +1218,7 @@ torch==2.9.1 \
     --hash=sha256:d033ff0ac3f5400df862a51bdde9bad83561f3739ea0046e68f5401ebfa67c1b \
     --hash=sha256:d187566a2cdc726fc80138c3cdb260970fab1c27e99f85452721f7759bbd554d \
     --hash=sha256:da5f6f4d7f4940a173e5572791af238cb0b9e21b1aab592bd8b26da4c99f1cd6
-    # via -r medasr_requirements.in
+    # via -r requirements.in
 tqdm==4.67.1 \
     --hash=sha256:26445eca388f82e72884e0d580d5464cd801a3ea01e63e5601bdff9ba6a48de2 \
     --hash=sha256:f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2
@@ -1227,7 +1227,7 @@ tqdm==4.67.1 \
     #   transformers
 transformers @ https://github.com/huggingface/transformers/archive/65dc261512cbdb1ee72b88ae5b222f2605aad8e5.tar.gz \
     --hash=sha256:35fcf91f953ccfb4902b85023436766ac5d1749df31563007687d768c43c47f8
-    # via -r medasr_requirements.in
+    # via -r requirements.in
 triton==3.5.1 \
     --hash=sha256:02c770856f5e407d24d28ddc66e33cf026e6f4d360dcb8b2fabe6ea1fc758621 \
     --hash=sha256:0b4d2c70127fca6a23e247f9348b8adde979d2e7a20391bfbabaac6aebc7e6a8 \
